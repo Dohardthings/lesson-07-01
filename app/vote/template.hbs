@@ -1,0 +1,13 @@
+ <h2> My Heroes </h2>
+
+ {{#each model as |hero|}}
+
+ <div class="row">
+   <div class="col-md-1">
+       <p class="hero-grid-item">
+          {{hero.score}}  {{hero.name}}  </p>  <button class="btn btn-success" {{action votePlus hero on="click"}}>vote +</button>
+         <button class="btn btn-danger" {{action voteMinus hero on="click"}}>vote -</button>
+     </div>
+ </div>
+
+ {{/each}}

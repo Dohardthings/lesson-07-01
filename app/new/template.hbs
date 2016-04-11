@@ -1,1 +1,8 @@
-{{outlet}}
+<h2 class="new-hero-heading">Add New Hero</h2>
+
+<form {{action addHero on="submit"}}>
+
+  {{input type="text" value=name placeholder="Place name here"}}
+
+  <button class="btn btn-success">Save</button>
+</form>

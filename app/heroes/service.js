@@ -62,5 +62,19 @@ export default Ember.Service.extend({
     }).then((result) => {
       this.set(`store`, replace(this.store, result));
     });
-  }
+  },
+  createRecord(hero) {
+    return fetch(`${this.apiUrl}`, {
+      method: `POST`,
+      headers: {
+        Accept: `application/json`,
+        'Content-Type': `application/json`,
+      },
+      body: JSON.stringify(hero),
+    }).then((res) => {
+      return res.json();
+    }).then((result) => {
+      this.set(`store`, replace(this.store, result));
+    });
+  },
 });
